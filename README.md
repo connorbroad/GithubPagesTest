@@ -10,23 +10,25 @@ Run `yarn install` to install dependencies.
 
 ## Development server
 
-Run `yarn start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `yarn start` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Deploying to Github Pages
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+See the Github Action yml: `.github/workflows/deploy.yml`
 
-Deploy to github pages using `ng deploy --base-href=/stuff/`
+On a merge to master, this builds the project and pushes the result to the `gh-pages` branch.
+
+The repo is configured to publish changes to that branch to the Github Page.
 
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-## Wishlist
+## Todo
 ### Home page
  - Arcade button with game selection
 
