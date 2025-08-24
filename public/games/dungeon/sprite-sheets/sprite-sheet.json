@@ -1,0 +1,235 @@
+{
+  "environment" : [
+  ],
+  "creatures" : [ 
+    {
+      "id" : "ghost",
+      "category": "monster",
+      "spriteLocation": {
+        "size": 2,
+        "x": 20,
+        "y": 20
+      }
+    },
+    {
+      "id" : "bird-demon",
+      "category": "monster",
+      "spriteLocation": {
+        "size": 2,
+        "x": 22,
+        "y": 20
+      }
+    },
+    {
+      "id" : "mind-flayer",
+      "category": "monster",
+      "spriteLocation": {
+        "size": 2,
+        "x": 24,
+        "y": 20
+      }
+    },
+    {
+      "id" : "leggy-snake",
+      "category": "monster",
+      "spriteLocation": {
+        "size": 2,
+        "x": 46,
+        "y": 20
+      }
+    },
+
+
+    {
+      "id" : "raptor",
+      "category": "animal",
+      "spriteLocation": {
+        "size": 2,
+        "x": 26,
+        "y": 20
+      }
+    },
+    {
+      "id" : "elephant",
+      "category": "animal",
+      "spriteLocation": {
+        "size": 2,
+        "x": 48,
+        "y": 20
+      }
+    },
+    {
+      "id" : "deer",
+      "category": "animal",
+      "spriteLocation": {
+        "size": 2,
+        "x": 36,
+        "y": 20
+      }
+    },
+    {
+      "id" : "snake",
+      "category": "animal",
+      "spriteLocation": {
+        "size": 2,
+        "x": 38,
+        "y": 20
+      }
+    },
+    {
+      "id" : "bear",
+      "category": "animal",
+      "spriteLocation": {
+        "size": 2,
+        "x": 58,
+        "y": 18
+      }
+    },
+    {
+      "id" : "bear-standing",
+      "category": "animal",
+      "spriteLocation": {
+        "size": 2,
+        "x": 60,
+        "y": 18
+      }
+    },
+
+
+    {
+      "id" : "hooded",
+      "category": "humanoid",
+      "spriteLocation": {
+        "size": 2,
+        "x": 28,
+        "y": 20
+      }
+    },
+    {
+      "id" : "elephant-man",
+      "category": "humanoid",
+      "spriteLocation": {
+        "size": 2,
+        "x": 50,
+        "y": 20
+      }
+    },
+    {
+      "id" : "bat-man",
+      "category": "humanoid",
+      "spriteLocation": {
+        "size": 2,
+        "x": 52,
+        "y": 20
+      }
+    },
+    {
+      "id" : "bat-man-flag",
+      "category": "humanoid",
+      "spriteLocation": {
+        "size": 2,
+        "x": 54,
+        "y": 20
+      }
+    },
+    {
+      "id" : "farmer",
+      "category": "humanoid",
+      "spriteLocation": {
+        "size": 2,
+        "x": 56,
+        "y": 20
+      }
+    },
+    {
+      "id" : "old-man-fat",
+      "category": "humanoid",
+      "spriteLocation": {
+        "size": 2,
+        "x": 58,
+        "y": 20
+      }
+    },
+    {
+      "id" : "old-man-stick",
+      "category": "humanoid",
+      "spriteLocation": {
+        "size": 2,
+        "x": 60,
+        "y": 20
+      }
+    },
+    {
+      "id" : "old-man-stick-2",
+      "category": "humanoid",
+      "spriteLocation": {
+        "size": 2,
+        "x": 62,
+        "y": 20
+      }
+    },
+    {
+      "id" : "old-man-stick-3",
+      "category": "humanoid",
+      "spriteLocation": {
+        "size": 2,
+        "x": 62,
+        "y": 18
+      }
+    },
+    {
+      "id" : "woman",
+      "category": "humanoid",
+      "spriteLocation": {
+        "size": 2,
+        "x": 30,
+        "y": 20
+      }
+    },
+    {
+      "id" : "man",
+      "category": "humanoid",
+      "spriteLocation": {
+        "size": 2,
+        "x": 32,
+        "y": 20
+      }
+    },
+    {
+      "id" : "knight",
+      "category": "humanoid",
+      "spriteLocation": {
+        "size": 2,
+        "x": 34,
+        "y": 20
+      }
+    },
+    {
+      "id" : "wizard",
+      "category": "humanoid",
+      "spriteLocation": {
+        "size": 2,
+        "x": 40,
+        "y": 20
+      }
+    },
+    {
+      "id" : "monk",
+      "category": "humanoid",
+      "spriteLocation": {
+        "size": 2,
+        "x": 42,
+        "y": 20
+      }
+    }
+  ],
+  "items" : [
+
+  ],
+  "shapes" : [
+    
+  ],
+  "text" : [
+    
+  ]
+}
