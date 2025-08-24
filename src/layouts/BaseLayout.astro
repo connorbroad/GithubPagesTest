@@ -13,7 +13,7 @@ const { pageTitle } = Astro.props;
         />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <base href="/GithubPagesTest/" />
+        <base href={Astro.site?.pathname ?? "/"} />
         <title>{pageTitle}</title>
     </head>
     <body>
