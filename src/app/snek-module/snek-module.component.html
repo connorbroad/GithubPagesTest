@@ -1,0 +1,23 @@
+<div id="game-bg">  
+    <div id="menu-text-container">
+        <div *ngIf="this.gameControl?.onMainMenu ?? false"> 
+            <p class="menu-text">Press any arrow key to start!</p>
+        </div>
+        <div *ngIf="this.gameControl?.isGameOver ?? false" class="menu-text text-light">
+            <div class="score-text">Score: {{this.gameControl.score}}</div>
+            <h1>GAME OVER</h1>
+            Press space to reset
+        </div>
+        <div *ngIf="this.gameControl?.playerHasWon ?? false" class="menu-text text-light victory-text">
+            <div class="score-text">Time: {{this.gameControl.finalTimeStr}}s</div>
+            <h1>😎 Victory! 😎</h1>
+            Press space to reset
+        </div>
+    </div>
+    <div *ngIf="this.gameControl?.isPlaying ?? false" id="game-text-container">
+        <div id="ingame-score">
+            Score: {{this.gameControl.score}}
+        </div>
+    </div> 
+    <canvas #gameCanvas id="gameCanvas"></canvas>
+</div>
