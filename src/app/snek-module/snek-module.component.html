@@ -1,7 +1,7 @@
 <div id="game-bg">  
     <div id="menu-text-container">
         <div *ngIf="this.gameControl?.onMainMenu ?? false"> 
-            <p class="menu-text">Press any arrow key to start! :D</p> 
+            <p class="menu-text">Press any arrow key to start!</p>
         </div>
         <div *ngIf="this.gameControl?.isGameOver ?? false" class="menu-text text-light">
             <div class="score-text">Score: {{this.gameControl.score}}</div>

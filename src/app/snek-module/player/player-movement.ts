@@ -59,7 +59,7 @@ export class PlayerMovementProcessor {
         if (this.movingOnXAxis() || ignoreCurrentDirection) {
             if (this.directionRequests.y) {
                 let requestedDir = new Vector2(0, this.directionRequests.y);
-                this.directionRequests.y = 0; //consume >:D
+                this.directionRequests.y = 0;
                 return requestedDir;
             }
         }
@@ -68,7 +68,7 @@ export class PlayerMovementProcessor {
         if (this.movingOnYAxis() || ignoreCurrentDirection) {
             if (this.directionRequests.x) {
                 let requestedDir = new Vector2(this.directionRequests.x, 0);
-                this.directionRequests.x = 0; //consume >:D
+                this.directionRequests.x = 0;
                 return requestedDir;
             }
         }
