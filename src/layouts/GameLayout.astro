@@ -1,0 +1,38 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+---
+
+<BaseLayout pageTitle="GameBoi">
+    <div class="game-page-content">
+        <div class="game-container-bg">
+            <div class="game-container">
+                <slot/>
+            </div>
+        </div>
+    </div>
+</BaseLayout>
+
+<style>
+    html {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .game-page-content {
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .game-container-bg {
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    .game-container {
+        width: 100%;
+        height: 100%;
+    }
+</style>

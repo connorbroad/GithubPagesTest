@@ -1,45 +1,33 @@
-Find the page at: https://connorbroad.github.io/GithubPagesTest/
+# Astro
 
-# Github Pages Test
+## 🚀 Project Structure
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.1.
+Inside of your Astro project, you'll see the following folders and files:
 
-## Setup
+```text
+/
+├── public/
+├── src/
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-Run `yarn install` to install dependencies.
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-## Development server
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
 
-Run `yarn start` for a dev server. Navigate to `http://localhost:4200/`.
+Any static assets, like images, can be placed in the `public/` directory.
 
-## Code scaffolding
+## 🧞 Commands
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+All commands are run from the root of the project, from a terminal:
 
-## Deploying to Github Pages
-
-See the Github Action yml: `.github/workflows/deploy.yml`
-
-On a merge to master, this builds the project and pushes the result to the `gh-pages` branch.
-
-The repo is configured to publish changes to that branch to the Github Page.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-## Todo
-### Home page
- - Arcade button with game selection
-
-### Snek game
- - Pause game
- - Menu with board size + speed selection
- - - Local score tables per difficulty?
- - On-screen controls for touch screens
- - Visuals emphasizing the beat of the movement updates
- - Rotate snake decorations with direction of movement
- - Visuals when eat food
-
-### More games
- - Space invaders? Bomberman?  The possibilities are endless
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |

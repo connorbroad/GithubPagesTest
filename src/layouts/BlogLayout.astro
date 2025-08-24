@@ -1,0 +1,25 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const {pageTitle} = Astro.props;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <Header/>
+    <h1>{pageTitle}</h1>
+    <slot/>
+    <Footer/>
+
+    <script>
+        import "../scripts/hamburger-menu.js";
+    </script>
+</BaseLayout>
+
+<style>
+    body {
+        padding: 1rem;
+        margin: 0 auto;
+        max-width: 80ch;
+    }
+</style>
