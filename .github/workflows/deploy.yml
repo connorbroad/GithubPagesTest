@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Build Angular app
+      - name: Build
         run: yarn build --configuration production
 
       - name: Deploy to GitHub Pages
