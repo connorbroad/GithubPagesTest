@@ -1,0 +1,32 @@
+---
+import BlogPostLink from "../components/BlogPostLink.astro";
+import Tag from "../components/Tag.astro";
+import BlogLayout from "../layouts/BlogLayout.astro";
+
+const allPosts = await Astro.glob('./posts/*.md');
+const tags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+
+const pageTitle = "Blog";
+---
+
+<BlogLayout pageTitle={pageTitle}>
+    <p>Me blog</p>
+
+    <ul>
+        {allPosts.map((post) =>
+                <BlogPostLink url={post.url} title={post.frontmatter.title}/>)}
+    </ul>
+
+    <div class="tags">
+        {tags.map((tag) => (
+                <Tag tagName={tag}/>
+        ))}
+    </div>
+</BlogLayout>
+
+<style>
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+    }
+</style>
