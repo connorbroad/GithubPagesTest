@@ -4,8 +4,8 @@ import { FontLoader } from "three/addons/loaders/FontLoader.js";
 
 export class TextUtils {
     private static fontLoader = new FontLoader();
-    private static fontPathNormal = "../../games/_utils/fonts/SyneMono_Regular.json";
-    private static fontPathBold = "../../games/_utils/fonts/Potta One_Regular.json";
+    private static fontPathNormal = "/github-pages-test/biimo/utils/fonts/SyneMono_Regular.json";
+    private static fontPathBold = "/github-pages-test/biimo/utils/fonts/Potta One_Regular.json";
 
     public static addText(
         scene: THREE.Scene,

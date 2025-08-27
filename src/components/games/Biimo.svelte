@@ -107,7 +107,7 @@
         }
     `;
 
-    const fragmentShader = await (await fetch('../../games/dungeon/shaders/biimo-retro-shader.frag')).text();
+    const fragmentShader = await (await fetch('/github-pages-test/biimo/shaders/biimo-retro-shader.frag')).text();
 
     const tintColor = Vector4.FromHexColor(`#b9fcc3`);
     const pixelationShader = {
