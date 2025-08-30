@@ -2,6 +2,7 @@ import type { Scene } from "three";
 import type { BiimoGame } from "../_base/biimo-game.ts";
 import * as THREE from "three";
 import {TextUtils} from "../_utils/text-utils.ts";
+import { BiimoButton } from "../_utils/game-utils.ts";
 
 export class ScreenTest implements BiimoGame {
     scene: THREE.Scene;
@@ -16,6 +17,26 @@ export class ScreenTest implements BiimoGame {
     constructor(canvasWidth: number, canvasHeight: number) {
         this.canvasWidth = canvasWidth;
         this.canvasHeight = canvasHeight;
+    }
+
+    handleBiimoInput(buttonId: BiimoButton): void {
+        switch (buttonId) {
+            case BiimoButton.Up:
+                console.log("D-pad Up pressed");
+                break;
+            case BiimoButton.Down:
+                console.log("D-pad Down pressed");
+                break;
+            case BiimoButton.Left:
+                console.log("D-pad Left pressed");
+                break;
+            case BiimoButton.Right:
+                console.log("D-pad Right pressed");
+                break;
+            default:
+                console.log("Unknown D-pad button pressed");
+        }
+        console.error("ScreenTest input not fully implemented");
     }
 
     readonly testImageUrl = "../../games/dungeon/screen-test/test-image.png";

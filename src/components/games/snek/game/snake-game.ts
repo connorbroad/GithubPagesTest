@@ -4,13 +4,14 @@ import { PreyController } from "../prey/prey-controller";
 import { Snake } from "../player/player";
 import * as THREE from 'three';
 import {UiController} from "../ui/ui.ts";
-import {GameState} from "../utils/utils.ts";
+import { GameState } from "../utils/utils.ts";
+import { BiimoButton } from "../../_utils/game-utils.ts";
 
 export class SnakeGame implements BiimoGame {
     public player: Snake | undefined;
     public board: Board | undefined;
-    readonly arrowKeys = ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"];
-    readonly spaceCode = "Space";
+    readonly arrowKeys = [BiimoButton.Up, BiimoButton.Down, BiimoButton.Left, BiimoButton.Right];
+    readonly spaceCode = BiimoButton.Start;
     score: number = 0;
     startTime: number = 0;
     finalTimeStr: string = "";
@@ -96,23 +97,53 @@ export class SnakeGame implements BiimoGame {
 
     // routes the event to the right handler(s), depending on the game state
     private onKeyDownEvent(e: KeyboardEvent) {
+        let snakeInput = this.getSnakeGameInput(e);
+        this.handleSnakeGameInput(snakeInput);
+    }
+
+    handleBiimoInput(buttonId: BiimoButton): void {
+        this.handleSnakeGameInput(buttonId);
+    }
+
+    private getSnakeGameInput(e: KeyboardEvent): BiimoButton {
+        switch (e.code) {
+            case "ArrowUp":
+                return BiimoButton.Up;
+            case "ArrowDown":
+                return BiimoButton.Down;
+            case "ArrowLeft":
+                return BiimoButton.Left;
+            case "ArrowRight":
+                return BiimoButton.Right;
+            case "KeyA":
+                return BiimoButton.A;
+            case "KeyB":
+                return BiimoButton.B;
+            case "Space":
+                return BiimoButton.Start;
+            default:
+                return BiimoButton.Unknown;
+        }
+    }
+
+    private handleSnakeGameInput(e: BiimoButton) {
         switch (this.gameState) {
-            case GameState.Playing:
-                this.player?.onKeyDown(e);
-                break;
             case GameState.MainMenu:
-                if (this.arrowKeys.includes(e.key)) {
+                if (this.arrowKeys.includes(e)) {
                     this.startGame(e);
                 }
                 break;
+            case GameState.Playing:
+                this.player?.onKeyDown(e);
+                break;
             case GameState.GameOver:
             case GameState.Victorious:
-                if (e.code == this.spaceCode) this.goToMainMenu();
+                if (e == this.spaceCode) this.goToMainMenu();
                 break;
         }
     }
 
-    private startGame(e: KeyboardEvent) {
+    private startGame(e: BiimoButton) {
         this.setGameState(GameState.Playing);
         this.startTime = Date.now();
         this.player?.onKeyDown(e); // starts the snake moving in the direction pressed

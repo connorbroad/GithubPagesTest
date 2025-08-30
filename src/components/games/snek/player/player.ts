@@ -1,10 +1,10 @@
 import {Prey} from "../prey/prey-controller";
 import {SnakeGame} from "../game/snake-game.ts";
-import {Vector2, Vector4} from "../utils/utils";
+import { Vector2, Vector4 } from "../utils/utils";
 import {PlayerMovementProcessor} from "./player-movement";
 import {SnakeSegment} from "./snake-segment";
 import * as THREE from "three";
-import {GameLayer, GameLayerPos, ZDepthHelper} from "../../_utils/game-utils.ts";
+import { BiimoButton, GameLayer, GameLayerPos, ZDepthHelper } from "../../_utils/game-utils.ts";
 
 export class Snake {
     // references
@@ -56,7 +56,7 @@ export class Snake {
         }
     }
 
-    public onKeyDown(e: KeyboardEvent) {
+    public onKeyDown(e: BiimoButton) {
         this.movementProcessor.onKeyDown(e);
     }
 

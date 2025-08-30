@@ -8,7 +8,7 @@
   import { Vector4 } from './snek/utils/utils.ts';
   import { DungeonGame } from './dungeon-game/lib/dungeon-game.ts';
   import type { BiimoGame } from './_base/biimo-game.ts';
-  import {CameraMaxZ, KnownGames} from './_utils/game-utils.ts';
+  import {CameraMaxZ, getBiimoButton, KnownGames} from './_utils/game-utils.ts';
   import { ScreenTest } from './_screen-test/screen-test.ts';
 
   let gameToLoad: KnownGames = KnownGames.Snake;
@@ -213,6 +213,13 @@
   function setPixelizationLevel(pixelSize: number) {
     retroShaderPass.uniforms.pixelSize.value = pixelSize;
   }
+  
+  function handleDPadClick(event: MouseEvent) {
+    const buttonId = (event.currentTarget as HTMLElement).id;
+    var buttonPressed = getBiimoButton(buttonId);
+    if (!buttonPressed) return;
+    loadedGame.handleBiimoInput(buttonPressed);
+  }
 </script>
 
 <div id="background"></div>
@@ -232,8 +239,22 @@
             <div class="d-pad-drop-shadow" id="d-pad-horizontal"></div>
           </div>
           <div id="d-pad-main">
-            <div class="d-pad-left-highlight" id="d-pad-vertical"></div>
-            <div class="d-pad-left-highlight" id="d-pad-horizontal"></div>
+            <div class="d-pad-left-highlight" id="d-pad-vertical">
+                <div id="d-pad-up-button" class="d-pad-arrow-button" on:click={handleDPadClick}>
+                  <div class="d-pad-arrow-button-icon"></div>
+                </div>
+                <div id="d-pad-down-button" class="d-pad-arrow-button" on:click={handleDPadClick}>
+                  <div class="d-pad-arrow-button-icon"></div>
+                </div>
+            </div>
+            <div class="d-pad-left-highlight" id="d-pad-horizontal">
+                <div id="d-pad-left-button" class="d-pad-arrow-button" on:click={handleDPadClick}>
+                  <div class="d-pad-arrow-button-icon"></div>
+                </div>
+                <div id="d-pad-right-button" class="d-pad-arrow-button" on:click={handleDPadClick}>
+                  <div class="d-pad-arrow-button-icon"></div>
+                </div>
+            </div>
           </div>
         </div>
         <div id="abButtons">
@@ -422,6 +443,10 @@
     background-color: #2f3031;
 
     border-radius: 10px;
+      
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   #d-pad-horizontal {
@@ -434,6 +459,23 @@
     background-color: #2f3031;
 
     border-radius: 10px;
+      
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .d-pad-arrow-button { 
+      aspect-ratio: 1;
+      background-color: #2f3031;
+      border-radius: 10px; 
+  }
+  
+  .d-pad-arrow-button-icon { 
+      aspect-ratio: 1;
+      background-color: #2f3031;
+      border-radius: 110px; 
+      margin: 15px;
   }
 
   #abButtons {

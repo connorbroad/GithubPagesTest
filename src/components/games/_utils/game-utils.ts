@@ -40,3 +40,27 @@ export const GameLayerPercentages: number[] = Array.from(
     (_, i) => i / (Object.keys(GameLayer).length / 2)
 );
 export const CameraMaxZ = 1000; // min is 0
+
+export enum BiimoButton {
+    Up = "d-pad-up-button",
+    Down = "d-pad-down-button",
+    Left = "d-pad-left-button",
+    Right = "d-pad-right-button",
+    A = "button-a",
+    B = "button-b",
+    Start = "button-start",
+    Select = "button-select",
+    Unknown = "button-unknown"
+}
+
+export function isBiimoButton(buttonId: string): buttonId is BiimoButton {
+    return Object.values(BiimoButton).includes(buttonId as BiimoButton);
+}
+
+// get the BiimoButton enum value from a string, or undefined if not valid
+export function getBiimoButton(buttonId: string): BiimoButton | undefined {
+    if (isBiimoButton(buttonId)) {
+        return buttonId as BiimoButton;
+    }
+    return undefined;
+}

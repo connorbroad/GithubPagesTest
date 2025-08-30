@@ -1,3 +1,5 @@
+import { BiimoButton } from "../../_utils/game-utils";
+import type { SnakeGame } from "../game/snake-game";
 import { Vector2 } from "../utils/utils";
 
 // The movement style this class enacts goes like this:
@@ -13,8 +15,8 @@ export class PlayerMovementProcessor {
 
   constructor() {}
 
-  public onKeyDown(e: KeyboardEvent) {
-    const dirRequest = this.keyToDirection(e.key);
+  public onKeyDown(e: BiimoButton) {
+    const dirRequest = this.keyToDirection(e);
     const startOfGame = !this.isMoving(); // e.g. start of the game, player has no direction
 
     // if the key is an x axis request, only add it to the x requests if we are moving on the y axis (unless there is already a y axis request)
@@ -42,15 +44,15 @@ export class PlayerMovementProcessor {
     this.currentDirection = Vector2.zero;
   }
 
-  private keyToDirection(key: string): Vector2 {
+  private keyToDirection(key: BiimoButton): Vector2 {
     switch (key) {
-      case "ArrowUp":
+      case BiimoButton.Up:
         return Vector2.up;
-      case "ArrowDown":
+      case BiimoButton.Down:
         return Vector2.down;
-      case "ArrowLeft":
+      case BiimoButton.Left:
         return Vector2.left;
-      case "ArrowRight":
+      case BiimoButton.Right:
         return Vector2.right;
       default:
         return Vector2.zero;
